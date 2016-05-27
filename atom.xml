@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Fzzf Blog</title>
-  <subtitle>Fzzf</subtitle>
+  <subtitle>风中追风</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2016-05-26T11:37:26.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://fzzf.github.io/"/>
+  <updated>2016-05-27T03:41:24.000Z</updated>
+  <id>http://fzzf.github.io/</id>
   
   <author>
     <name>Fzzf</name>
@@ -16,13 +16,111 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/05/26/hello-world/"/>
-    <id>http://yoursite.com/2016/05/26/hello-world/</id>
-    <published>2016-05-26T11:10:00.000Z</published>
-    <updated>2016-05-26T11:37:26.000Z</updated>
+    <title>hexo使用</title>
+    <link href="http://fzzf.github.io/2016/05/26/hexo%E4%BD%BF%E7%94%A8/"/>
+    <id>http://fzzf.github.io/2016/05/26/hexo使用/</id>
+    <published>2016-05-26T12:00:00.000Z</published>
+    <updated>2016-05-27T03:41:24.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;title-Hello-World&quot;&gt;&lt;a href=&quot;#title-Hello-World&quot; class=&quot;headerlink&quot; title=&quot;title: Hello World&quot;&gt;&lt;/a&gt;title: Hello World&lt;/h2&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    <content type="html">&lt;p&gt;hexo博客搭建需要准备nodejs,以及git&lt;/p&gt;
+&lt;h6 id=&quot;首先在github上创建一个-xxx-github-io的respsitory&quot;&gt;&lt;a href=&quot;#首先在github上创建一个-xxx-github-io的respsitory&quot; class=&quot;headerlink&quot; title=&quot;首先在github上创建一个 xxx.github.io的respsitory&quot;&gt;&lt;/a&gt;首先在github上创建一个 xxx.github.io的respsitory&lt;/h6&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
+&lt;h6 id=&quot;安装hexo&quot;&gt;&lt;a href=&quot;#安装hexo&quot; class=&quot;headerlink&quot; title=&quot;安装hexo&quot;&gt;&lt;/a&gt;安装hexo&lt;/h6&gt;&lt;pre&gt;
+npm install hexo-cli -g
+&lt;/pre&gt;
+
+&lt;h6 id=&quot;初始化项目&quot;&gt;&lt;a href=&quot;#初始化项目&quot; class=&quot;headerlink&quot; title=&quot;初始化项目&quot;&gt;&lt;/a&gt;初始化项目&lt;/h6&gt;&lt;pre&gt;
+hexo init xxx.github.io
+&lt;/pre&gt;
+
+
+
+&lt;h6 id=&quot;安装依赖&quot;&gt;&lt;a href=&quot;#安装依赖&quot; class=&quot;headerlink&quot; title=&quot;安装依赖&quot;&gt;&lt;/a&gt;安装依赖&lt;/h6&gt;&lt;pre&gt;
+cd xxx.github.io
+npm install
+&lt;/pre&gt;
+
+&lt;h6 id=&quot;安装hexo管理插件，编辑发布blog&quot;&gt;&lt;a href=&quot;#安装hexo管理插件，编辑发布blog&quot; class=&quot;headerlink&quot; title=&quot;安装hexo管理插件，编辑发布blog&quot;&gt;&lt;/a&gt;安装hexo管理插件，编辑发布blog&lt;/h6&gt;&lt;pre&gt;
+npm install hexo-admin --save
+&lt;/pre&gt;
+
+
+&lt;h6 id=&quot;更换主题&quot;&gt;&lt;a href=&quot;#更换主题&quot; class=&quot;headerlink&quot; title=&quot;更换主题&quot;&gt;&lt;/a&gt;更换主题&lt;/h6&gt;&lt;pre&gt;
+git clone https://github.com/iissnan/hexo-theme-next themes/next
+&lt;/pre&gt;
+
+&lt;h6 id=&quot;安装git部署插件，发布项目&quot;&gt;&lt;a href=&quot;#安装git部署插件，发布项目&quot; class=&quot;headerlink&quot; title=&quot;安装git部署插件，发布项目&quot;&gt;&lt;/a&gt;安装git部署插件，发布项目&lt;/h6&gt;&lt;pre&gt;
+npm install hexo-deployer-git --save
+&lt;/pre&gt;
+&lt;br&gt;修改&lt;font color=&quot;red&quot;&gt;_config.yml&lt;/font&gt;
+&lt;pre&gt;
+deploy:
+type: git
+repository: https://github.com/xx/xx.github.io.git
+branch: master
+&lt;/pre&gt;
+
+&lt;pre&gt;
+hexo deploy #发布到github上
+&lt;/pre&gt;
+###### 在blog中添加RSS订阅需要安装hexo-generator-feed
+&lt;pre&gt;npm install hexo-generator-feed --save&lt;/pre&gt;
+
+&lt;!-- more --&gt; 
+&lt;p&gt;安装完hexo-generator-feed后，在配置文件&lt;font color=&quot;red&quot;&gt;_config.yml&lt;/font&gt;中添加如下配置&lt;/p&gt;
+&lt;pre&gt; plugin:
+- hexo-generator-feed
+feed:
+type: atom
+path: atom.xml
+limit: 20
+&lt;/pre&gt; 
+
+&lt;p&gt;添加之后，运行&lt;font color=&quot;red&quot;&gt;hexo g&lt;/font&gt;,就会在页面上生成RSS图标。&lt;/p&gt;
+&lt;h6 id=&quot;评论系统&quot;&gt;&lt;a href=&quot;#评论系统&quot; class=&quot;headerlink&quot; title=&quot;评论系统&quot;&gt;&lt;/a&gt;评论系统&lt;/h6&gt;&lt;p&gt;添加&lt;a href=&quot;http://duoshuo.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;多说&lt;/a&gt;评论&lt;/p&gt;
+&lt;ol&gt;&lt;br&gt;&lt;li&gt;登录多说，首页中选择”我要安装”&lt;/li&gt;&lt;br&gt;&lt;li&gt;创建站点，填写表单。多说域名&lt;/li&gt;&lt;br&gt;&lt;li&gt;在&lt;font color=&quot;red&quot;&gt;_config.yml&lt;/font&gt;中新增&lt;br&gt;&lt;code&gt;duoshuo_shortname&lt;/code&gt;&lt;br&gt;字段，值为多说域名中所填的内容。&lt;br&gt;修改&lt;br&gt;&lt;pre&gt;&lt;br&gt;duoshuo_info:&lt;br&gt;  ua_enable: true&lt;br&gt;  admin_enable: false&lt;br&gt;  user_id: xxx&lt;br&gt;  admin_nickname: author&lt;br&gt;duoshuo_hotartical: true #开启热评文章&lt;br&gt;&lt;/pre&gt;&lt;br&gt;user_id: xxx中的 xxx 为自己的id&lt;br&gt;&lt;/li&gt;&lt;br&gt;&lt;/ol&gt;
+
+&lt;h6 id=&quot;数据统计与分析&quot;&gt;&lt;a href=&quot;#数据统计与分析&quot; class=&quot;headerlink&quot; title=&quot;数据统计与分析&quot;&gt;&lt;/a&gt;数据统计与分析&lt;/h6&gt;&lt;p&gt;数据统计可以使用百度统计、Google分析、腾讯分析和不蒜子统计等&lt;br&gt;本blog中使用不蒜子统计。&lt;br&gt;修改&lt;font color=&quot;red&quot;&gt;_config.yml&lt;/font&gt;&lt;/p&gt;
+&lt;pre&gt;
+busuanzi_count:
+  enable: true
+  site_uv: true
+  site_uv_header: 访客数
+  site_uv_footer: 人数
+  site_pv: true
+  site_pv_header: 访问量
+  site_pv_footer: 次
+  page_pv: true
+  page_pv_header: 阅读次数
+  page_pv_footer: 次
+&lt;/pre&gt;
+
+&lt;h6 id=&quot;内容分享&quot;&gt;&lt;a href=&quot;#内容分享&quot; class=&quot;headerlink&quot; title=&quot;内容分享&quot;&gt;&lt;/a&gt;内容分享&lt;/h6&gt;&lt;p&gt;next中有百度分享、多说分享、JiaThis、AddThis等，&lt;br&gt;本blog中使用的为github中开源项目&lt;a href=&quot;https://github.com/overtrue/share.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;share.js&lt;/a&gt;。&lt;/p&gt;
+&lt;h6 id=&quot;hexo主题配置&quot;&gt;&lt;a href=&quot;#hexo主题配置&quot; class=&quot;headerlink&quot; title=&quot;hexo主题配置&quot;&gt;&lt;/a&gt;hexo主题配置&lt;/h6&gt;&lt;p&gt;具体内容可以去&lt;a href=&quot;http://theme-next.iissnan.com/theme-settings.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NexT主题配置&lt;/a&gt;上看，&lt;br&gt;第三方配置可参考&lt;a href=&quot;http://theme-next.iissnan.com/third-party-services.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NexT第三方配置&lt;/a&gt;。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo博客搭建需要准备nodejs,以及git&lt;/p&gt;
+&lt;h6 id=&quot;首先在github上创建一个-xxx-github-io的respsitory&quot;&gt;&lt;a href=&quot;#首先在github上创建一个-xxx-github-io的respsitory&quot; class=&quot;headerlink&quot; title=&quot;首先在github上创建一个 xxx.github.io的respsitory&quot;&gt;&lt;/a&gt;首先在github上创建一个 xxx.github.io的respsitory&lt;/h6&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://fzzf.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://fzzf.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://fzzf.github.io/2016/05/26/hello-world/"/>
+    <id>http://fzzf.github.io/2016/05/26/hello-world/</id>
+    <published>2016-05-26T11:10:00.000Z</published>
+    <updated>2016-05-27T02:34:50.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
@@ -36,14 +134,15 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;title-Hello-World&quot;&gt;&lt;a href=&quot;#title-Hello-World&quot; class=&quot;headerlink&quot; title=&quot;title: Hello World&quot;&gt;&lt;/a&gt;title: Hello World&lt;/h2&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+      &lt;hr&gt;
+&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
     
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="hexo" scheme="http://fzzf.github.io/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://fzzf.github.io/tags/hexo/"/>
     
   </entry>
   
